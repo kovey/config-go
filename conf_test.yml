@@ -1,0 +1,29 @@
+version: '3'
+
+server:
+    host: 127.0.0.1
+    port: 8080
+    package:
+        open-check: true
+        body-len-offset: 0
+        package-max: 2097152
+        header-len: 8
+
+mysql:
+    master:
+        - {host: 127.0.0.1,port: 3306,username: root,password: 123456,dbname: test,charset: utf8mb4, dev: On}
+        - {host: 127.0.0.1,port: 3306,username: root,password: 123456,dbname: test,charset: utf8mb4, dev: On}
+    slave:
+        - {host: 127.0.0.1,port: 3306,username: root,password: 123456,dbname: test,charset: utf8mb4, dev: On}
+        - {host: 127.0.0.1,port: 3306,username: root,password: 123456,dbname: test,charset: utf8mb4, dev: On}
+
+redis:
+    master:
+        - {host: 127.0.0.1, port: 6279, username: root, password: 12346, db: 0, dev: On}
+        - {host: 127.0.0.1, port: 6279, username: root, password: 12346, db: 0, dev: On}
+    slave:
+        - {host: 127.0.0.1, port: 6279, username: root, password: 12346, db: 0, dev: On}
+        - {host: 127.0.0.1, port: 6279, username: root, password: 12346, db: 0, dev: On}
+logger:
+    level: LOGGER_INFO
+    log-dir: /home/logs
