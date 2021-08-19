@@ -41,6 +41,9 @@ clickhouse:
     timeout:
         read: 10
         write: 10
+    server:
+        host: 127.0.0.1
+        port: 9000
     cluster:
         open: On
         servers:

@@ -11,6 +11,7 @@ type ClickHouse struct {
 	Compress     int     `yaml:"compress"`
 	Timeout      Timeout `yaml:"timeout"`
 	Cluster      Cluster `yaml:"cluster"`
+	Server       Addr    `yaml:"server"`
 }
 
 type Timeout struct {
