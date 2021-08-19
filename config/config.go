@@ -59,10 +59,11 @@ type Logger struct {
 }
 
 type Config struct {
-	Server Server    `yaml:"server"`
-	Mysql  MysqlConf `yaml:"mysql"`
-	Logger Logger    `yaml:"logger"`
-	Redis  RedisConf `yaml:"redis"`
+	Server     Server     `yaml:"server"`
+	Mysql      MysqlConf  `yaml:"mysql"`
+	Logger     Logger     `yaml:"logger"`
+	Redis      RedisConf  `yaml:"redis"`
+	ClickHouse ClickHouse `yaml:"clickhouse"`
 }
 
 func LoadConfigBy(path string, t interface{}) error {

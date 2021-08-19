@@ -9,6 +9,10 @@ server:
         package-max: 2097152
         header-len: 8
 
+logger:
+    level: LOGGER_INFO
+    log-dir: /home/logs
+
 mysql:
     master:
         - {host: 127.0.0.1,port: 3306,username: root,password: 123456,dbname: test,charset: utf8mb4, dev: On}
@@ -24,6 +28,21 @@ redis:
     slave:
         - {host: 127.0.0.1, port: 6279, username: root, password: 12346, db: 0, dev: On}
         - {host: 127.0.0.1, port: 6279, username: root, password: 12346, db: 0, dev: On}
-logger:
-    level: LOGGER_INFO
-    log-dir: /home/logs
+
+clickhouse:
+    username: default
+    password: default
+    dbname: test
+    debug: false
+    open-strategy: random
+    block-size: 1000000
+    pool-size: 100
+    compress: 0
+    timeout:
+        read: 10
+        write: 10
+    cluster:
+        open: On
+        servers:
+            - {host: 127.0.0.1, port: 9000}
+            - {host: 127.0.0.1, port: 9000}
