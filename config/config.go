@@ -12,6 +12,7 @@ import (
 type Server struct {
 	Host    string  `yaml:"host"`
 	Port    int32   `yaml:"port"`
+	Test    string  `yaml:"test"`
 	Package Package `yaml:"package"`
 }
 

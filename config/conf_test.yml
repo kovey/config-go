@@ -3,6 +3,7 @@ version: '3'
 server:
     host: 127.0.0.1
     port: 8080
+    test: On
     package:
         open-check: true
         body-len-offset: 0
